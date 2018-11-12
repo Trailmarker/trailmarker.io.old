@@ -6040,6 +6040,9 @@ body {
 .jumbo h1 {
   line-height: 100px;
   margin-top: -50px;
-  text-transform: lowercase;
-  font-size: 4em; }
+  font-size: 3em; }
+
+@media (min-width: 768px) {
+  .jumbo h1 {
+    font-size: 4em; } }
 /*# sourceMappingURL=trailmarker.css.map */
