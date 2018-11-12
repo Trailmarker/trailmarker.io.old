@@ -1,6 +1,6 @@
 (ns io.trailmarker.index
   (:use [hiccup.core :only (html)]
-        [hiccup.page :refer (html5 include-css)]))
+        [hiccup.page :refer (html5 include-css include-js)]))
 
 
 (defn render [{global-meta :meta posts :entries}]
@@ -11,13 +11,14 @@
           [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge,chrome=1"}]
           [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0, user-scalable=no"}]
           (include-css "https://fonts.googleapis.com/css?family=Merriweather")
-          (include-css "css/trailmarker.css")]
+          (include-css "css/trailmarker.css")
+          (include-js "//code.jquery.com/jquery-3.1.1.slim.min.js")]
          [:body
           [:div.jumbo
            [:h1 "Trailmarker"]
            [:p "App development. Spatial technology. Clojure."]
-           [:p [:a {:href "mailto:info@trailmarker.io"}
-                "info@trailmarker.io"]]]
+           [:p.rot13-email "vasb@genvyznexre.vb"]
+           [:p.rot13-phone "+38 565 070 712"]]
           #_[:ul
              [:li [:a {:href "/about.html"} "About Page"]]
              [:li [:a {:href "/feed.rss"} "RSS"]]

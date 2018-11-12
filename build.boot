@@ -48,7 +48,7 @@
                                                           (assoc-in [path :entry :keyword] kw))))
                                                   {}))))
         #_(perun/static :renderer 'io.trailmarker.about/render :page "about.html")
-        #_(perun/inject-scripts :scripts #{"start.js"})
+        (perun/inject-scripts :scripts #{"contacts.js"})
         #_(perun/sitemap)
         #_(perun/rss :description "Hashobject blog")
         #_(perun/atom-feed :filterer :original)
