@@ -25,7 +25,13 @@ body {
   margin-top: -50px;
   //font-style: italic;
   //font-variant: small-caps;
-  text-transform: lowercase;
-  font-size: 4em;
+  //text-transform: lowercase;
+  font-size: 3em;
+}
+
+@include media-breakpoint-up(md) {
+  .jumbo h1 {
+    font-size: 4em; 
+  }
 }
 
