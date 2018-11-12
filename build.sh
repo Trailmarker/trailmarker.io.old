@@ -17,5 +17,5 @@ cp -r target/public/* gh-pages
 cd gh-pages
 
 git add --all
-git commit -m "Build from ${rev}."
+git commit -m "build site from ${rev}"
 git push origin master
