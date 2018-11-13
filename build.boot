@@ -1,10 +1,12 @@
 (set-env!
   :source-paths #{"src"}
   :resource-paths #{"resources"}
+  :repositories #(conj % '["bintray" {:url "http://dl.bintray.com/nitram509/jbrotli"}])
   :dependencies '[[perun "0.4.2-SNAPSHOT"]
                   [hiccup "1.0.5" :exclusions [org.clojure/clojure]]
                   [thheller/shadow-cljs "2.6.24"]
                   [pandeiro/boot-http "0.6.3-SNAPSHOT"]
+                  #_[nha/boot-uglify "0.0.6"]
                   [org.clojure/data.json "0.2.6"]
                   [clj-time "0.13.0"]
                   [deraen/boot-sass "0.3.1" :scope "test"]])
@@ -14,13 +16,11 @@
          '[boot.core :as boot]
          '[io.perun :as perun]
          '[pandeiro.boot-http :refer [serve]]
-         '[deraen.boot-sass :refer [sass]])
+         '[deraen.boot-sass :refer [sass]]
+         #_'[nha.boot-uglify :refer [uglify]])
 
-(task-options!
- sass {:source-map true})
-
-(deftask build
-  "Build trailmarker.io." 
+(deftask main
+  "Build trailmarker.io."
   []
   (comp
         (perun/global-metadata)
@@ -55,12 +55,19 @@
         #_(perun/rss :description "Hashobject blog")
         #_(perun/atom-feed :filterer :original)
         #_(perun/print-meta)
-        (sass)
-        (target)
         #_(notify)))
 
 (deftask dev
   []
   (comp (watch)
-        (build)
+        (main)
+        (sass :source-map true)
+        (target)
         (serve :resource-root "public")))
+
+(deftask build
+  []
+  (comp (main)
+        (sass :output-style :compressed)
+        #_(uglify)
+        (target)))
