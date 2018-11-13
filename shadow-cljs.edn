@@ -1,0 +1,12 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ []
+
+ :builds
+ {:index {:target  :browser
+                   :output-dir "resources/public/index"
+                   :asset-path "/index"
+                   :modules {:script {:entries [io.trailmarker.index.script]}}}}}

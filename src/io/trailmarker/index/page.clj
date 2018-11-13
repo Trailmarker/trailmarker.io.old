@@ -1,4 +1,4 @@
-(ns io.trailmarker.index
+(ns io.trailmarker.index.page
   (:use [hiccup.core :only (html)]
         [hiccup.page :refer (html5 include-css include-js)]))
 
@@ -14,11 +14,12 @@
           (include-css "css/trailmarker.css")
           (include-js "//code.jquery.com/jquery-3.1.1.slim.min.js")]
          [:body
-          [:div.jumbo
+          [:div.jumbo.a-fadein
            [:h1 "Trailmarker"]
            [:p "App development. Spatial technology. Clojure."]
            [:p.rot13-email "vasb@genvyznexre.vb"]
            [:p.rot13-phone "+38 565 070 712"]]
+          [:script {:src "index/script.js"}]
           #_[:ul
              [:li [:a {:href "/about.html"} "About Page"]]
              [:li [:a {:href "/feed.rss"} "RSS"]]

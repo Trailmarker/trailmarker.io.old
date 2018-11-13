@@ -3,3 +3,5 @@ target
 .nrepl-port
 node_modules
 gh-pages
+.shadow-cljs
+resources/public/index

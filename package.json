@@ -1,8 +1,11 @@
 {
   "name": "trailmarker.io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "See build.boot",
-  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.7.2"
+  },
   "dependencies": {
     "bootstrap": "4.1.1",
     "jquery": "1.9.1",

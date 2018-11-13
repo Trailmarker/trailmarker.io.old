@@ -11,6 +11,8 @@ cd gh-pages
 git pull
 )
 
+rm -rf target
+shadow-cljs release index
 boot build
 cp -r target/public/* gh-pages
 
