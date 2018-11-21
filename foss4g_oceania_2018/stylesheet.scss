@@ -27,9 +27,10 @@
 
 /* // 6. Page-specific styles */
 /* @import 'pages/home'; */
-
 /* // 7. Utilities and animations */
 /* @import 'utilities/animations/fadein'; */
+
+$break-device: 800px;
 
 $fluoro-green: darken(#48fb47,30%);
 
@@ -90,10 +91,10 @@ $text-font-stack: 'Lato', 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
 }
 
 .reveal h1 {
-font-size: 1.6em;
-font-weight: bold !important;
-text-align: center;
-color: white !important;
+  font-size: 1.6em;
+  font-weight: bold !important;
+  text-align: center;
+  color: white !important;
 }
 
 .reveal h1.strangelove-title.huge {
@@ -119,9 +120,14 @@ color: white !important;
   justify-content: left !important;
   align-items: flex-start !important;
   padding: 1em;
-  min-width: 1000px;
-  width: 80%;
-  margin: auto;
+  @media screen and (min-width: $break-device) {
+    width: 80%;
+    margin: auto;
+  }
+  @media screen and (max-width: $break-device) {
+    width: calc(100% - 2em);
+    margin: 0; 
+  }
 }
 
 .reveal.slide .slides > section.centred-slide,
