@@ -104,6 +104,15 @@ $text-font-stack: 'Lato', 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
   font-style: bold !important;
 }
 
+.reveal h2.width-warning {
+  color: white;
+  background-color: red;
+}
+
+.reveal h2.width-warning.hidden {
+  visibility: hidden;
+}
+
 .strangelove-text {
   font-family: $text-font-stack !important;
   font-weight: bold !important;
