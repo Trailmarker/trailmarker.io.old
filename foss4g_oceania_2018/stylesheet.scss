@@ -31,7 +31,7 @@
 /* // 7. Utilities and animations */
 /* @import 'utilities/animations/fadein'; */
 
-$fluoro-green: darken(#48fb47,10%);
+$fluoro-green: darken(#48fb47,30%);
 
 $text-font-stack: 'Lato', 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
@@ -167,6 +167,7 @@ color: white !important;
 @mixin override-reveal-control-colours {
   color: $fluoro-green !important;
   border-color: $fluoro-green !important;
+  font-weight: bold;
 }
 
 @mixin override-light-scheme {
