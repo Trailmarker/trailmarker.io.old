@@ -16,9 +16,9 @@
          [:body
           [:div.jumbo.a-fadein
            [:h1 "Trailmarker"]
-           [:p "App development. Spatial technology. Clojure."]
+           #_[:p "App development. Spatial technology. Clojure."]
            [:p.rot13-email "vasb@genvyznexre.vb"]
-           [:p.rot13-phone "+38 565 070 712"]]
+           #_[:p.rot13-phone "+38 565 070 712"]]
           [:script {:src "index/script.js"}]
           #_[:ul
              [:li [:a {:href "/about.html"} "About Page"]]
